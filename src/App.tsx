@@ -30,7 +30,6 @@ import {
 	SelectValue
 } from '@/components/ui/select'
 import { Input } from './components/ui/input'
-import BTC from './node_modules/cryptocurrency-icons/svg/color/btc.svg'
 
 function App() {
 	return (
