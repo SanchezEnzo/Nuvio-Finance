@@ -27,6 +27,7 @@ import {
 	PopoverTrigger
 } from '@/components/shadcn/popover'
 import { Label } from '../components/ui/label'
+import { ArrowsSwapIcon } from '@/assets/ArrowsSwapIcon'
 
 interface Coin {
 	name: string
@@ -40,6 +41,11 @@ const coins: Coin[] = [
 		label: 'USDT',
 		element: <Tether />
 	},
+	// {
+	// 	name: 'usdc',
+	// 	label: 'USDC',
+	// 	element: <USDC />
+	// },
 	{
 		name: 'bitcoin',
 		label: 'Bitcoin',
