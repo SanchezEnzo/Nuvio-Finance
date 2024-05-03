@@ -3,6 +3,8 @@ export function Metamask() {
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			xmlSpace='preserve'
+			height='32'
+			width='32'
 			id='Layer_1'
 			x='0'
 			y='0'

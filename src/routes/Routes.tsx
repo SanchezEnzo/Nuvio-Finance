@@ -1,5 +1,7 @@
 import { Bridge } from '@/pages/Bridge'
+import { Market } from '@/pages/Market'
 import { Pools } from '@/pages/Pools'
+import { Stake } from '@/pages/Stake'
 import Swap from '@/pages/Swap'
 import { Wallet } from '@/pages/Wallet'
 import { useRoutes } from 'react-router-dom'
@@ -17,7 +19,11 @@ export function Routes(): React.ReactNode | null {
 		{
 			path: '/pools',
 			element: <Pools />
-		},
+    },
+    {
+      path: 'market',
+      element: <Market />
+    },
 		{
 			path: '/bridge',
 			element: <Bridge />
@@ -25,6 +31,10 @@ export function Routes(): React.ReactNode | null {
 		{
 			path: '/wallet',
 			element: <Wallet />
+		},
+		{
+			path: '/stake',
+			element: <Stake />
 		}
 	])
 	return routes
