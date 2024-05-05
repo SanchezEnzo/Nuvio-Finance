@@ -59,6 +59,7 @@ import { useState } from 'react'
 import { Metamask } from '@/assets/crypto/metamask'
 import { Coinbase } from '@/assets/crypto/coinbase'
 import { TrustWallet } from '@/assets/crypto/trust'
+import { MarketIcon } from '@/assets/MarketIcon'
 
 interface Coin {
 	name: string
@@ -237,11 +238,11 @@ function Swap() {
 	return (
 		<div className='flex items-center h-screen'>
 			<div className='flex items-center relative ml-5'>
-				<Card className='h-[90vh] top-0 left-0 w-24 flex flex-col items-center gap-16 rounded-sm'>
+				<Card className='h-[90vh] top-0 left-0 w-24 flex flex-col items-center gap-[20vh] rounded-sm'>
 					<Link to='/' className='bg-none mt-5'>
 						<NuvioLogoWhite />
 					</Link>
-					<div className='flex flex-col items-center gap-5'>
+					<div className='flex flex-col items-center gap-[5vh]'>
 						<Button className='bg-transparent ' variant='ghost'>
 							<Link to='/swap'>
 								<ArrowsSwapIcon />
@@ -254,8 +255,8 @@ function Swap() {
 						</Button>
 
 						<Button className='bg-transparent ' variant='ghost'>
-							<Link to='bridge'>
-								<BridgeIcon />
+							<Link to='/market'>
+								<MarketIcon />
 							</Link>
 						</Button>
 						<Button className='bg-transparent ' variant='ghost'>
