@@ -1,4 +1,4 @@
-export function Xrp() {
+export function Xrp(): React.ReactNode {
 	return (
 		<svg
 			width='32'
@@ -64,7 +64,7 @@ export function Xrp() {
 				<g
 					id='Group'
 					transform='translate(1.000000, 0.000000)'
-					fill-rule='nonzero'
+					fillRule='nonzero'
 				>
 					<g id='Oval'>
 						<use
@@ -95,7 +95,7 @@ export function Xrp() {
 					id='XRP-(XRP)'
 					transform='translate(7.000000, 8.000000)'
 					fill='#FFF'
-					fill-rule='nonzero'
+					fillRule='nonzero'
 				>
 					<path
 						d='M15.3632812,0 L17.9648438,0 L12.5507812,5.36132812 C10.5890625,7.30195312 7.4109375,7.30195312 5.44921875,5.36132812 L0.031640625,0 L2.63671875,0 L6.75,4.07109375 C7.99101562,5.3015625 10.0054688,5.3015625 11.2464844,4.07109375 L15.3632812,0 Z'
