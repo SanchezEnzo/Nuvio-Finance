@@ -1,5 +1,7 @@
 import { Bridge } from '@/pages/Bridge'
+import { Home } from '@/pages/Home'
 import { Market } from '@/pages/Market'
+import { Navbar } from '@/pages/Navbar'
 import { Pools } from '@/pages/Pools'
 import { Stake } from '@/pages/Stake'
 import Swap from '@/pages/Swap'
@@ -10,31 +12,33 @@ export function Routes(): React.ReactNode | null {
 	const routes = useRoutes([
 		{
 			path: '/',
-			element: <Swap />
-		},
-		{
-			path: '/swap',
-			element: <Swap />
-		},
-		{
-			path: '/pools',
-			element: <Pools />
-    },
-    {
-      path: 'market',
-      element: <Market />
-    },
-		{
-			path: '/bridge',
-			element: <Bridge />
-		},
-		{
-			path: '/wallet',
-			element: <Wallet />
-		},
-		{
-			path: '/stake',
-			element: <Stake />
+			element: <Home />,
+			children: [
+				{
+					path: 'swap',
+					element: <Swap />
+				},
+				{
+					path: 'pools',
+					element: <Pools />
+				},
+				{
+					path: 'market',
+					element: <Market />
+				},
+				{
+					path: 'bridge',
+					element: <Bridge />
+				},
+				{
+					path: 'wallet',
+					element: <Wallet />
+				},
+				{
+					path: 'stake',
+					element: <Stake />
+				}
+			]
 		}
 	])
 	return routes

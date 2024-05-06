@@ -26,8 +26,8 @@ function TableCoins(): React.ReactNode {
 	}, [])
 
 	return (
-		<Table className='text-right w-[70%]'>
-			<TableCaption>A list of crypto</TableCaption>
+		<Table className='text-right '>
+			{/* <TableCaption>A list of crypto </TableCaption> */}
 			<TableHeader>
 				<TableRow>
 					<TableHead className='w-[100px]'>Token name</TableHead>
@@ -64,11 +64,12 @@ function TableCoins(): React.ReactNode {
 								{coin.symbol}
 							</TableCell>
 							<TableCell>
-								${(parseInt(coin.market_cap_usd) / 1000000).toFixed(0)} M
+								{new Intl.NumberFormat().format(parseInt(coin.market_cap_usd))}{' '}
+								US$
 							</TableCell>
 							<TableCell>{coin.percent_change_24h}%</TableCell>
 							<TableCell>{coin.percent_change_7d}%</TableCell>
-							<TableCell>${coin.price_usd}</TableCell>
+							<TableCell>{parseFloat(coin.price_usd).toFixed(2)} US$</TableCell>
 						</TableRow>
 					))}
 			</TableBody>
@@ -78,8 +79,11 @@ function TableCoins(): React.ReactNode {
 
 export function Market(): React.ReactNode {
 	return (
-		<section className='w-full h-full flex items-center justify-center'>
-			<TableCoins />
+		<section className='flex items-center w-full h-screen justify-center'>
+			<div className='w-[75%]'>
+				<h2 className='mb-4 font-semibold text-2xl'>Tokens</h2>
+				<TableCoins />
+			</div>
 		</section>
 	)
 }

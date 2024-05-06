@@ -27,13 +27,6 @@ import {
 	PopoverTrigger
 } from '@/components/shadcn/popover'
 import { Label } from '../components/ui/label'
-import { ArrowsSwapIcon } from '@/assets/ArrowsSwapIcon'
-import { NuvioLogoWhite } from '@/assets/NuvioLogoWhite'
-
-import { Link } from 'react-router-dom'
-import { PoolsIcon } from '@/assets/PoolsIcon'
-import { BridgeIcon } from '@/assets/BridgeIcon'
-import { StakeIcon } from '@/assets/StakeIcon'
 
 import { cn } from '@/lib/utils'
 import { useMediaQuery } from '../hooks/useMediaQuery'
@@ -59,7 +52,7 @@ import { useState } from 'react'
 import { Metamask } from '@/assets/crypto/metamask'
 import { Coinbase } from '@/assets/crypto/coinbase'
 import { TrustWallet } from '@/assets/crypto/trust'
-import { MarketIcon } from '@/assets/MarketIcon'
+import { Navbar } from './Navbar'
 
 interface Coin {
 	name: string
@@ -120,7 +113,7 @@ const coins: Coin[] = [
 	}
 ]
 
-function DrawerDialogDemo() {
+function ConectWallet() {
 	const [open, setOpen] = useState(false)
 	const isDesktop = useMediaQuery('(min-width: 768px)')
 
@@ -237,43 +230,8 @@ function ProfileForm({ className }: React.ComponentProps<'form'>) {
 function Swap() {
 	return (
 		<div className='flex items-center h-screen'>
-			<div className='flex items-center relative ml-5'>
-				<Card className='h-[90vh] top-0 left-0 w-24 flex flex-col items-center gap-[20vh] rounded-sm'>
-					<Link to='/' className='bg-none mt-5'>
-						<NuvioLogoWhite />
-					</Link>
-					<div className='flex flex-col items-center gap-[5vh]'>
-						<Button className='bg-transparent ' variant='ghost'>
-							<Link to='/swap'>
-								<ArrowsSwapIcon />
-							</Link>
-						</Button>
-						<Button className='bg-transparent ' variant='ghost'>
-							<Link to='/pools'>
-								<PoolsIcon />
-							</Link>
-						</Button>
-
-						<Button className='bg-transparent ' variant='ghost'>
-							<Link to='/market'>
-								<MarketIcon />
-							</Link>
-						</Button>
-						<Button className='bg-transparent ' variant='ghost'>
-							<Link to='bridge'>
-								<BridgeIcon />
-							</Link>
-						</Button>
-						<Button className='bg-transparent ' variant='ghost'>
-							<Link to='stake'>
-								<StakeIcon />
-							</Link>
-						</Button>
-					</div>
-				</Card>
-			</div>
 			<div className='fixed top-8 right-5'>
-				<DrawerDialogDemo />
+				<ConectWallet />
 			</div>
 			<div className=' w-full  flex justify-center items-center'>
 				<div>
