@@ -6,10 +6,10 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger
-} from './shadcn/dialog'
+} from '../shadcn/dialog'
 import { useState } from 'react'
-import { Button } from './shadcn/button'
-import { Card } from './shadcn/card'
+import { Button } from '../shadcn/button'
+import { Card } from '../shadcn/card'
 import { Metamask } from '@/assets/crypto/metamask'
 import { TrustWallet } from '@/assets/crypto/trust'
 import { Coinbase } from '@/assets/crypto/coinbase'
@@ -22,7 +22,10 @@ import {
 	DrawerHeader,
 	DrawerTitle,
 	DrawerTrigger
-} from './shadcn/drawer'
+} from '../shadcn/drawer'
+import { Label } from '@radix-ui/react-select'
+import { Input } from '../shadcn/input'
+import { cn } from '@/lib/utils'
 
 function ProfileForm({ className }: React.ComponentProps<'form'>) {
 	return (

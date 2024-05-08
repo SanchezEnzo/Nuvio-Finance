@@ -28,9 +28,6 @@ import {
 } from '@/components/shadcn/popover'
 import { Label } from '../components/ui/label'
 
-import { cn } from '@/lib/utils'
-import { ConectWallet } from '@/components/ConectWallet'
-
 interface Coin {
 	name: string
 	label: string
@@ -93,9 +90,6 @@ const coins: Coin[] = [
 function Swap() {
 	return (
 		<div className='flex items-center h-screen'>
-			<div className='fixed top-8 right-5'>
-				<ConectWallet />
-			</div>
 			<div className=' w-full  flex justify-center items-center'>
 				<div>
 					<div className='flex items-center mb-5 justify-between'>
