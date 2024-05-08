@@ -50,8 +50,8 @@ function TableCoins(): React.ReactNode {
 							coin.symbol === 'MATIC'
 					)
 					.map(coin => (
-						<TableRow key={coin.id}>
-							<TableCell className='font-medium flex items-center gap-2'>
+						<TableRow key={coin.id} className=''>
+							<TableCell className='font-medium  my-2 flex items-center gap-2'>
 								{coin.symbol === 'BTC' && <Btc />}
 								{coin.symbol === 'ETH' && <Eth />}
 								{coin.symbol === 'BNB' && <Bnb />}
@@ -78,8 +78,8 @@ function TableCoins(): React.ReactNode {
 
 export function Market(): React.ReactNode {
 	return (
-		<section className='flex items-center w-full h-screen justify-center'>
-			<div className='w-[75%]'>
+		<section className='flex items-start mt-28 w-full h-screen justify-center'>
+			<div className='w-[70%]'>
 				<h2 className='mb-4 font-semibold text-2xl'>Tokens</h2>
 				<TableCoins />
 			</div>

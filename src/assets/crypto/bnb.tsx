@@ -9,8 +9,8 @@ export function Bnb() {
 		>
 			<defs>
 				<linearGradient id='bnb-c' x1='50%' x2='50%' y1='0%' y2='100%'>
-					<stop offset='0%' stop-color='#FFF' stop-opacity='.5' />
-					<stop offset='100%' stop-opacity='.5' />
+					<stop offset='0%' stopColor='#FFF' stopOpacity='.5' />
+					<stop offset='100%' stopOpacity='.5' />
 				</linearGradient>
 				<circle id='bnb-b' cx='16' cy='15' r='15' />
 				<filter
@@ -62,13 +62,13 @@ export function Bnb() {
 					/>
 				</filter>
 			</defs>
-			<g fill='none' fill-rule='evenodd'>
-				<g fill-rule='nonzero'>
+			<g fill='none' fillRule='evenodd'>
+				<g fillRule='nonzero'>
 					<use fill='#000' filter='url(#bnb-a)' xlinkHref='#bnb-b' />
-					<use fill='#F3BA2F' fill-rule='evenodd' xlinkHref='#bnb-b' />
+					<use fill='#F3BA2F' fillRule='evenodd' xlinkHref='#bnb-b' />
 					<use
 						fill='url(#bnb-c)'
-						fill-rule='evenodd'
+						fillRule='evenodd'
 						style={{ mixBlendMode: 'soft-light' }}
 						xlinkHref='#bnb-b'
 					/>
@@ -77,12 +77,12 @@ export function Bnb() {
 						cy='15'
 						r='14.5'
 						stroke='#000'
-						stroke-opacity='.097'
+						strokeOpacity='.097'
 					/>
 				</g>
-				<g fill-rule='nonzero'>
+				<g fillRule='nonzero'>
 					<use fill='#000' filter='url(#bnb-d)' xlinkHref='#bnb-e' />
-					<use fill='#FFF' fill-rule='evenodd' xlinkHref='#bnb-e' />
+					<use fill='#FFF' fillRule='evenodd' xlinkHref='#bnb-e' />
 				</g>
 			</g>
 		</svg>

@@ -3,6 +3,8 @@ export function USDC(): React.ReactNode {
 		<svg
 			data-name='86977684-12db-4850-8f30-233a7c267d11'
 			xmlns='http://www.w3.org/2000/svg'
+			height='32'
+			width='32'
 			viewBox='0 0 2000 2000'
 		>
 			<path

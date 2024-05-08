@@ -5,7 +5,7 @@ import { ConectWallet } from '@/components/home/ConectWallet'
 export function Home(): React.ReactNode {
 	return (
 		<div className='flex w-full items-center h-screen'>
-			<aside className='relative h-full flex w-[116px]'>
+			<aside className='fixed h-full flex w-[116px]'>
 				<Navbar />
 			</aside>
 			<div className='fixed top-8 right-5'>
