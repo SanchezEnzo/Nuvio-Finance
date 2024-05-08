@@ -16,6 +16,17 @@ import {
 	TableHeader,
 	TableRow
 } from '@/components/shadcn/table'
+import Tether from '@/assets/crypto/tether'
+import { USDC } from '@/assets/crypto/usdc'
+import { Wsteth } from '@/assets/crypto/wsteth'
+import { Dot } from '@/assets/crypto/dot'
+import { Arb } from '@/assets/crypto/arb'
+import { Atom } from '@/assets/crypto/atom'
+import { Avax } from '@/assets/crypto/Avax'
+import { Ftm } from '@/assets/crypto/ftm'
+import { Inj } from '@/assets/crypto/inj'
+import { Cro } from '@/assets/crypto/cro'
+import { Algoland } from '@/assets/crypto/algorand'
 
 function TableCoins(): React.ReactNode {
 	const { cryptoPrices, getCryptoPrices } = useCryptoPrices()
@@ -32,7 +43,7 @@ function TableCoins(): React.ReactNode {
 					<TableHead className='w-[100px]'>Token name</TableHead>
 					<TableHead className='w-[100px] text-right'>Market cap</TableHead>
 					<TableHead className='w-[100px] text-right'>24h %</TableHead>
-					<TableHead className='w-[100px] text-right'>7D %</TableHead>
+					<TableHead className='w-[100px] text-right'>7d %</TableHead>
 					<TableHead className='w-[100px] text-right'>Price</TableHead>
 				</TableRow>
 			</TableHeader>
@@ -42,24 +53,45 @@ function TableCoins(): React.ReactNode {
 						coin =>
 							coin.symbol === 'BTC' ||
 							coin.symbol === 'ETH' ||
+							coin.symbol === 'USDT' ||
+							coin.symbol === 'USDC' ||
 							coin.symbol === 'BNB' ||
 							coin.symbol === 'SOL' ||
 							coin.symbol === 'XRP' ||
 							coin.symbol === 'DOGE' ||
 							coin.symbol === 'TON' ||
-							coin.symbol === 'MATIC'
+							coin.symbol === 'DOT' ||
+							coin.symbol === 'ALGO' ||
+							coin.symbol === 'MATIC' ||
+							coin.symbol === 'ARB' ||
+							coin.symbol === 'ATOM' ||
+							coin.symbol === 'AVAX' ||
+							coin.symbol === 'CRO' ||
+							coin.symbol === 'DOT' ||
+							coin.symbol === 'INJ' ||
+							coin.symbol === 'FTM'
 					)
 					.map(coin => (
 						<TableRow key={coin.id} className=''>
 							<TableCell className='font-medium  my-2 flex items-center gap-2'>
 								{coin.symbol === 'BTC' && <Btc />}
 								{coin.symbol === 'ETH' && <Eth />}
+								{coin.symbol === 'USDT' && <Tether />}
+								{coin.symbol === 'USDC' && <USDC />}
 								{coin.symbol === 'BNB' && <Bnb />}
 								{coin.symbol === 'SOL' && <Solana />}
 								{coin.symbol === 'XRP' && <Xrp />}
 								{coin.symbol === 'DOGE' && <Doge />}
 								{coin.symbol === 'TON' && <Ton />}
 								{coin.symbol === 'MATIC' && <Matic />}
+								{coin.symbol === 'ARB' && <Arb />}
+								{coin.symbol === 'ATOM' && <Atom />}
+								{coin.symbol === 'AVAX' && <Avax />}
+								{coin.symbol === 'CRO' && <Cro />}
+								{coin.symbol === 'DOT' && <Dot />}
+								{coin.symbol === 'INJ' && <Inj />}
+								{coin.symbol === 'FTM' && <Ftm />}
+								{coin.symbol === 'ALGO' && <Algoland />}
 								{coin.symbol}
 							</TableCell>
 							<TableCell>

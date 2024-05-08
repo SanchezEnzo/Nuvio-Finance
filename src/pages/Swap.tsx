@@ -43,6 +43,7 @@ import { PolygonUsdc } from '@/assets/crypto/PolygonUsdc'
 import { AvalancheUsdc } from '@/assets/crypto/AvalancheUsdc'
 import { Avax } from '@/assets/crypto/Avax'
 import { Nbtc } from '@/assets/crypto/nbtc'
+import { Ton } from '@/assets/crypto/ton'
 
 interface Coin {
 	name: string
@@ -92,6 +93,11 @@ const coins: Coin[] = [
 		element: <Doge />
 	},
 	{
+		name: 'toncoin',
+		label: 'TON',
+		element: <Ton />
+	},
+	{
 		name: 'algoland',
 		label: 'ALGO',
 		element: <Algoland />
@@ -126,55 +132,11 @@ const coins: Coin[] = [
 		label: 'DOT',
 		element: <Dot />
 	},
-	{
-		name: 'evmos',
-		label: 'EVMOS',
-		element: <Evmos />
-	},
-	{
-		name: 'nbtc',
-		label: 'nBTC',
-		element: <Nbtc />
-	},
+
 	{
 		name: 'injective',
 		label: 'INJ',
 		element: <Inj />
-	},
-	{
-		name: 'kuji',
-		label: 'KUJI',
-		element: <Kuji />
-	},
-	{
-		name: 'fantom',
-		label: 'FTM',
-		element: <Ftm />
-	},
-	{
-		name: 'usdcAxl',
-		label: 'USDC.axl',
-		element: <UsdcAxl />
-	},
-	{
-		name: 'wbtcAxl',
-		label: 'wBTC.axl',
-		element: <WbtcAxl />
-	},
-	{
-		name: 'wsteth',
-		label: 'wstETH',
-		element: <Wsteth />
-	},
-	{
-		name: 'polygonUsdc',
-		label: 'MATIC.usdc',
-		element: <PolygonUsdc />
-	},
-	{
-		name: 'avalancheUsdc',
-		label: 'AVAX.usdc',
-		element: <AvalancheUsdc />
 	}
 ]
 
