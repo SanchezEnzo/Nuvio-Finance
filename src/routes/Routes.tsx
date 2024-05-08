@@ -1,7 +1,6 @@
 import { Bridge } from '@/pages/Bridge'
 import { Home } from '@/pages/Home'
 import { Market } from '@/pages/Market'
-import { Navbar } from '@/pages/Navbar'
 import { Pools } from '@/pages/Pools'
 import { Stake } from '@/pages/Stake'
 import Swap from '@/pages/Swap'
