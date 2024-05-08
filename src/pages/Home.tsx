@@ -3,8 +3,8 @@ import { Navbar } from './Navbar'
 
 export function Home(): React.ReactNode {
 	return (
-		<div className='flex w-full items-center h-full'>
-			<aside className='relative h-full flex items-center w-[116px]'>
+		<div className='flex w-full items-center h-screen'>
+			<aside className='relative h-full flex w-[116px]'>
 				<Navbar />
 			</aside>
 			<section className='flex justify-center w-full'>

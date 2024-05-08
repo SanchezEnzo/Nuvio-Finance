@@ -11,8 +11,8 @@ import { MarketIcon } from '@/assets/MarketIcon'
 
 export function Navbar(): React.ReactNode {
 	return (
-		<div className='flex items-center relative top-0 ml-5'>
-			<Card className='h-[90vh] w-24 flex flex-col items-center fixed gap-[20vh] rounded-sm'>
+		<div className='flex items-center relative h-full  ml-5'>
+			<Card className='h-[90vh] w-24 flex flex-col items-center  gap-[20vh] rounded-sm'>
 				<Link to='/' className='bg-none mt-5'>
 					<NuvioLogoWhite />
 				</Link>
