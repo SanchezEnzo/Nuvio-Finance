@@ -8,6 +8,12 @@ import { StakeIcon } from '@/assets/StakeIcon'
 import { Card } from '@/components/shadcn/card'
 import { Button } from '@/components/shadcn/button'
 import { MarketIcon } from '@/assets/MarketIcon'
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger
+} from '@/components/ui/tooltip'
 
 export function Navbar(): React.ReactNode {
 	return (
@@ -17,32 +23,66 @@ export function Navbar(): React.ReactNode {
 					<NuvioLogoWhite />
 				</Link>
 				<div className='flex flex-col items-center gap-[5vh]'>
-					<Button className='bg-transparent ' variant='ghost'>
-						<Link to='/swap'>
-							<ArrowsSwapIcon />
-						</Link>
-					</Button>
-					<Button className='bg-transparent ' variant='ghost'>
-						<Link to='/pools'>
-							<PoolsIcon />
-						</Link>
-					</Button>
-
-					<Button className='bg-transparent ' variant='ghost'>
-						<Link to='/market'>
-							<MarketIcon />
-						</Link>
-					</Button>
-					<Button className='bg-transparent ' variant='ghost'>
-						<Link to='bridge'>
-							<BridgeIcon />
-						</Link>
-					</Button>
-					<Button className='bg-transparent ' variant='ghost'>
-						<Link to='stake'>
-							<StakeIcon />
-						</Link>
-					</Button>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger>
+								<Button className='bg-transparent ' variant='ghost'>
+									<Link to='/swap'>
+										<ArrowsSwapIcon />
+									</Link>
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent side='right'>Swap</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger>
+								<Button className='bg-transparent ' variant='ghost'>
+									<Link to='/pools'>
+										<PoolsIcon />
+									</Link>
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent side='right'>Pools</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger>
+								<Button className='bg-transparent ' variant='ghost'>
+									<Link to='/market'>
+										<MarketIcon />
+									</Link>
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent side='right'>Market</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger>
+								<Button className='bg-transparent ' variant='ghost'>
+									<Link to='bridge'>
+										<BridgeIcon />
+									</Link>
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent side='right'>Bridge</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger>
+								<Button className='bg-transparent ' variant='ghost'>
+									<Link to='stake'>
+										<StakeIcon />
+									</Link>
+								</Button>
+							</TooltipTrigger>
+							<TooltipContent side='right'>Stake</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
 				</div>
 			</Card>
 		</div>
