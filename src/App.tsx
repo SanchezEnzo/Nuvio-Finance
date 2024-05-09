@@ -5,3 +5,14 @@ function App(): React.ReactNode {
 }
 
 export default App
+
+/* 
+TODOS:
+Border de botones como astro
+Modificar Slippage
+Modificar nombres de pools
+Meter el efecto de astro
+
+
+
+*/

@@ -1,13 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Btc } from '../assets/crypto/btc'
-import { Eth } from '../assets/crypto/eth'
-import { Bnb } from '../assets/crypto/bnb'
-import { Algoland } from '../assets/crypto/algorand'
-import { Doge } from '../assets/crypto/doge'
-import { Solana } from '../assets/crypto/sol'
-import { Xrp } from '../assets/crypto/xrp'
-import { Matic } from '../assets/crypto/matic'
 import Tether from '../assets/crypto/tether'
 
 import { Button } from '../components/shadcn/button'
@@ -27,118 +20,7 @@ import {
 	PopoverTrigger
 } from '@/components/shadcn/popover'
 import { Label } from '../components/ui/label'
-import { USDC } from '@/assets/crypto/usdc'
-import { Arb } from '@/assets/crypto/arb'
-import { Atom } from '@/assets/crypto/atom'
-import { Cro } from '@/assets/crypto/cro'
-import { Dot } from '@/assets/crypto/dot'
-import { Evmos } from '@/assets/crypto/Evmos'
-import { Inj } from '@/assets/crypto/inj'
-import { Kuji } from '@/assets/crypto/Kuji'
-import { Ftm } from '@/assets/crypto/ftm'
-import { UsdcAxl } from '@/assets/crypto/usdcAxl'
-import { WbtcAxl } from '@/assets/crypto/wbtcAxl'
-import { Wsteth } from '@/assets/crypto/wsteth'
-import { PolygonUsdc } from '@/assets/crypto/PolygonUsdc'
-import { AvalancheUsdc } from '@/assets/crypto/AvalancheUsdc'
-import { Avax } from '@/assets/crypto/Avax'
-import { Nbtc } from '@/assets/crypto/nbtc'
-import { Ton } from '@/assets/crypto/ton'
-
-interface Coin {
-	name: string
-	label: string
-	element: JSX.Element
-}
-
-const coins: Coin[] = [
-	{
-		name: 'usdt',
-		label: 'USDT',
-		element: <Tether />
-	},
-	{
-		name: 'usdc',
-		label: 'USDC',
-		element: <USDC />
-	},
-	{
-		name: 'bitcoin',
-		label: 'BTC',
-		element: <Btc />
-	},
-	{
-		name: 'ethereum',
-		label: 'ETH',
-		element: <Eth />
-	},
-	{
-		name: 'bnb',
-		label: 'BNB',
-		element: <Bnb />
-	},
-	{
-		name: 'solana',
-		label: 'SOL',
-		element: <Solana />
-	},
-	{
-		name: 'xrp',
-		label: 'XRP',
-		element: <Xrp />
-	},
-	{
-		name: 'doge',
-		label: 'DOGE',
-		element: <Doge />
-	},
-	{
-		name: 'toncoin',
-		label: 'TON',
-		element: <Ton />
-	},
-	{
-		name: 'algoland',
-		label: 'ALGO',
-		element: <Algoland />
-	},
-	{
-		name: 'matic',
-		label: 'MATIC',
-		element: <Matic />
-	},
-	{
-		name: 'arb',
-		label: 'ARB',
-		element: <Arb />
-	},
-	{
-		name: 'atom',
-		label: 'ATOM',
-		element: <Atom />
-	},
-	{
-		name: 'avax',
-		label: 'AVAX',
-		element: <Avax />
-	},
-	{
-		name: 'cro',
-		label: 'CRO',
-		element: <Cro />
-	},
-	{
-		name: 'dot',
-		label: 'DOT',
-		element: <Dot />
-	},
-
-	{
-		name: 'injective',
-		label: 'INJ',
-		element: <Inj />
-	}
-]
+import { coins } from '@/constants/coins'
 
 function Swap() {
 	return (
