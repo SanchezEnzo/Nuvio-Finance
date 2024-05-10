@@ -18,7 +18,6 @@ import {
 } from '@/components/shadcn/table'
 import Tether from '@/assets/crypto/tether'
 import { USDC } from '@/assets/crypto/usdc'
-import { Wsteth } from '@/assets/crypto/wsteth'
 import { Dot } from '@/assets/crypto/dot'
 import { Arb } from '@/assets/crypto/arb'
 import { Atom } from '@/assets/crypto/atom'

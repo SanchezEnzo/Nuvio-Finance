@@ -24,9 +24,9 @@ export function Bridge(): React.ReactNode {
 			<div className=' w-full  flex justify-center items-center'>
 				<div>
 					<div className='flex items-center mb-5 justify-between'>
-						<h2 className='font-semibold text-2xl'>Swap</h2>
+						<h2 className='font-semibold text-2xl'>Bridge</h2>
 						{/* Slippage */}
-						<Popover>
+						{/* <Popover>
 							<PopoverTrigger asChild>
 								<Button variant='outline' className=''>
 									Slippage
@@ -60,7 +60,7 @@ export function Bridge(): React.ReactNode {
 									</div>
 								</div>
 							</PopoverContent>
-						</Popover>
+						</Popover> */}
 					</div>
 					<Card className='w-[600px] h-[250px] flex flex-col items-center justify-center gap-10 rounded-sm'>
 						<div className='flex justify-around gap-20'>

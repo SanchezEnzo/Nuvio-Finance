@@ -20,7 +20,7 @@ export function Navbar(): React.ReactNode {
 		<div className='flex items-center relative h-full  ml-5'>
 			<Card className='h-[90vh] w-24 flex flex-col items-center  gap-[20vh] rounded-sm'>
 				<Link to='/' className='bg-none mt-5'>
-					<NuvioLogoWhite />
+					<NuvioLogoWhite height={40} width={40} />
 				</Link>
 				<div className='flex flex-col items-center gap-[5vh]'>
 					<TooltipProvider>
@@ -59,7 +59,7 @@ export function Navbar(): React.ReactNode {
 							<TooltipContent side='right'>Market</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
-					<TooltipProvider>
+					{/* <TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger>
 								<Button className='bg-transparent ' variant='ghost'>
@@ -70,7 +70,7 @@ export function Navbar(): React.ReactNode {
 							</TooltipTrigger>
 							<TooltipContent side='right'>Bridge</TooltipContent>
 						</Tooltip>
-					</TooltipProvider>
+					</TooltipProvider> */}
 					<TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger>

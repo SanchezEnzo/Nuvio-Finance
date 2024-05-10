@@ -104,7 +104,7 @@ function Swap() {
 											placeholder={
 												<div className='flex items-center gap-2'>
 													<Btc />
-													<p>Bitcoin</p>
+													<p>BTC</p>
 												</div>
 											}
 										/>

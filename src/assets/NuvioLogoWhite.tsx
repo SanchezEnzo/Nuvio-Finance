@@ -1,9 +1,15 @@
-export function NuvioLogoWhite(): React.ReactNode {
+export function NuvioLogoWhite({
+	height,
+	width
+}: {
+	height: number
+	width: number
+}): React.ReactNode {
 	return (
 		<svg
 			fill='#fefefe'
-			height='40px'
-			width='40px'
+			height={`${height}px`}
+			width={`${width}px`}
 			version='1.1'
 			id='Capa_1'
 			xmlns='http://www.w3.org/2000/svg'
