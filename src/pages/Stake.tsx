@@ -8,6 +8,7 @@ import {
 	TabsList,
 	TabsTrigger
 } from '@/components/shadcn/tabs'
+import { Loading } from '@/components/ui/Loding'
 
 export function TabsDemo(): React.ReactNode {
 	return (
