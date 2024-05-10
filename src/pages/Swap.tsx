@@ -19,7 +19,7 @@ import {
 	PopoverContent,
 	PopoverTrigger
 } from '@/components/shadcn/popover'
-import { Label } from '../components/ui/label'
+import { Label } from '../components/shadcn/label'
 import { coins } from '@/constants/coins'
 
 function Swap() {

@@ -15,7 +15,7 @@ import {
 	SelectTrigger,
 	SelectValue
 } from '@/components/shadcn/select'
-import { Label } from '@/components/ui/label'
+import { Label } from '@/components/shadcn/label'
 import { coins } from '@/constants/coins'
 
 export function Bridge(): React.ReactNode {
