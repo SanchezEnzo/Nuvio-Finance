@@ -1,4 +1,4 @@
-export function Evmos() {
+export function Evmos(): JSX.Element {
 	return (
 		<svg
 			width='32'

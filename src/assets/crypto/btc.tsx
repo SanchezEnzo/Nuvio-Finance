@@ -1,4 +1,4 @@
-export function Btc() {
+export function Btc(): JSX.Element {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -9,8 +9,8 @@ export function Btc() {
 		>
 			<defs>
 				<linearGradient id='btc-c' x1='50%' x2='50%' y1='0%' y2='100%'>
-					<stop offset='0%' stop-color='#FFF' stop-opacity='.5' />
-					<stop offset='100%' stop-opacity='.5' />
+					<stop offset='0%' stopColor='#FFF' stopOpacity='.5' />
+					<stop offset='100%' stopOpacity='.5' />
 				</linearGradient>
 				<circle id='btc-b' cx='16' cy='15' r='15' />
 				<filter
@@ -62,7 +62,7 @@ export function Btc() {
 					/>
 				</filter>
 			</defs>
-			<g fill='none' fill-rule='evenodd'>
+			<g fill='none' fillRule='evenodd'>
 				<use fill='#000' filter='url(#btc-a)' xlinkHref='#btc-b' />
 				<use fill='#F7931A' xlinkHref='#btc-b' />
 				<use
@@ -70,10 +70,10 @@ export function Btc() {
 					style={{ mixBlendMode: 'soft-light' }}
 					xlinkHref='#btc-b'
 				/>
-				<circle cx='16' cy='15' r='14.5' stroke='#000' stroke-opacity='.097' />
-				<g fill-rule='nonzero'>
+				<circle cx='16' cy='15' r='14.5' stroke='#000' strokeOpacity='.097' />
+				<g fillRule='nonzero'>
 					<use fill='#000' filter='url(#btc-d)' xlinkHref='#btc-e' />
-					<use fill='#FFF' fill-rule='evenodd' xlinkHref='#btc-e' />
+					<use fill='#FFF' fillRule='evenodd' xlinkHref='#btc-e' />
 				</g>
 			</g>
 		</svg>

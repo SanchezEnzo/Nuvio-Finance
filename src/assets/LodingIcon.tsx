@@ -3,7 +3,7 @@ import { lineSpinner } from 'ldrs'
 lineSpinner.register()
 
 // Default values shown
-export function Loading() {
+export function LoadingIcon(): React.ReactNode {
 	return (
 		<l-line-spinner
 			size='40'

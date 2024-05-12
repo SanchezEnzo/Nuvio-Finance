@@ -1,4 +1,4 @@
-export function Eth() {
+export function Eth(): JSX.Element {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -68,7 +68,7 @@ export function Eth() {
 					/>
 				</filter>
 			</defs>
-			<g fill='none' fill-rule='evenodd'>
+			<g fill='none' fillRule='evenodd'>
 				<use fill='#000' filter='url(#eth-a)' xlinkHref='#eth-b' />
 				<use fill='#627EEA' xlinkHref='#eth-b' />
 				<use
@@ -77,12 +77,12 @@ export function Eth() {
 					xlinkHref='#eth-b'
 				/>
 				<circle cx='16' cy='15' r='14.5' stroke='#000' strokeOpacity='.097' />
-				<g fill-rule='nonzero'>
+				<g fillRule='nonzero'>
 					<use fill='#000' filter='url(#eth-d)' xlinkHref='#eth-e' />
 					<use
 						fill='#FFF'
-						fill-opacity='0'
-						fill-rule='evenodd'
+						fillOpacity='0'
+						fillRule='evenodd'
 						xlinkHref='#eth-e'
 					/>
 				</g>

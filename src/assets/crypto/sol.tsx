@@ -1,4 +1,4 @@
-export function Solana() {
+export function Solana(): JSX.Element {
 	return (
 		<svg
 			viewBox='0 0 36 36'

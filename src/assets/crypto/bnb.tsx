@@ -1,4 +1,4 @@
-export function Bnb() {
+export function Bnb(): JSX.Element {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -72,13 +72,7 @@ export function Bnb() {
 						style={{ mixBlendMode: 'soft-light' }}
 						xlinkHref='#bnb-b'
 					/>
-					<circle
-						cx='16'
-						cy='15'
-						r='14.5'
-						stroke='#000'
-						strokeOpacity='.097'
-					/>
+					<circle cx='16' cy='15' r='14.5' stroke='#000' strokeOpacity='.097' />
 				</g>
 				<g fillRule='nonzero'>
 					<use fill='#000' filter='url(#bnb-d)' xlinkHref='#bnb-e' />

@@ -1,4 +1,4 @@
-export function UsdcAxl() {
+export function UsdcAxl(): JSX.Element {
 	return (
 		<svg
 			width='32'

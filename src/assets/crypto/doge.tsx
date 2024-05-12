@@ -1,4 +1,4 @@
-export function Doge() {
+export function Doge(): JSX.Element {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -62,7 +62,7 @@ export function Doge() {
 					/>
 				</filter>
 			</defs>
-			<g fill='none' fill-rule='evenodd'>
+			<g fill='none' fillRule='evenodd'>
 				<use fill='#000' filter='url(#doge-a)' xlinkHref='#doge-b' />
 				<use fill='#C3A634' xlinkHref='#doge-b' />
 				<use
@@ -70,7 +70,7 @@ export function Doge() {
 					style={{ mixBlendMode: 'soft-light' }}
 					xlinkHref='#doge-b'
 				/>
-				<circle cx='16' cy='15' r='14.5' stroke='#000' stroke-opacity='.097' />
+				<circle cx='16' cy='15' r='14.5' stroke='#000' strokeOpacity='.097' />
 				<g>
 					<use fill='#000' filter='url(#doge-d)' xlinkHref='#doge-e' />
 					<use fill='#FFF' xlinkHref='#doge-e' />

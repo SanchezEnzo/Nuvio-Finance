@@ -1,4 +1,4 @@
-export function Matic() {
+export function Matic(): JSX.Element {
 	return (
 		<svg
 			viewBox='0 0 36 36'

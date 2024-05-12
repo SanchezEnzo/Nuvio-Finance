@@ -1,4 +1,4 @@
-export function Metamask() {
+export function Metamask(): JSX.Element {
 	return (
 		<svg
 			fill='none'

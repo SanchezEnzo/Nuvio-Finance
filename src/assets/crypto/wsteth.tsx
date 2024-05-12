@@ -1,4 +1,4 @@
-export function Wsteth() {
+export function Wsteth(): JSX.Element {
 	return (
 		<svg
 			width='32'
@@ -8,16 +8,16 @@ export function Wsteth() {
 			xmlns='http://www.w3.org/2000/svg'
 		>
 			<g clipPath='url(#clip0_935_885)'>
-<mask
-  id='mask0_935_885'
-  maskUnits='userSpaceOnUse'
-  x='0'
-  y='0'
-  width='500'
-  height='500'
->
-  <rect width='500' height='500' fill='#D9D9D9' />
-</mask>
+				<mask
+					id='mask0_935_885'
+					maskUnits='userSpaceOnUse'
+					x='0'
+					y='0'
+					width='500'
+					height='500'
+				>
+					<rect width='500' height='500' fill='#D9D9D9' />
+				</mask>
 				<g mask='url(#mask0_935_885)'>
 					<g clipPath='url(#clip1_935_885)'>
 						<mask

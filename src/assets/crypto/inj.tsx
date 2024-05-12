@@ -1,4 +1,4 @@
-export function Inj() {
+export function Inj(): JSX.Element {
 	return (
 		<svg
 			width='32'

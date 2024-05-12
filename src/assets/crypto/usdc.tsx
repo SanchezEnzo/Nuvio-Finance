@@ -1,4 +1,4 @@
-export function USDC(): React.ReactNode {
+export function USDC(): JSX.Element {
 	return (
 		<svg
 			data-name='86977684-12db-4850-8f30-233a7c267d11'

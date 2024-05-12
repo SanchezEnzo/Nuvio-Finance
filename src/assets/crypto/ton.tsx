@@ -1,4 +1,4 @@
-export function Ton() {
+export function Ton(): JSX.Element {
 	return (
 		<svg
 			width='32'

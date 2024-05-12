@@ -1,4 +1,4 @@
-export function Dot() {
+export function Dot(): JSX.Element {
 	return (
 		<svg
 			width='32'

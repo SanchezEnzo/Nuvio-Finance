@@ -1,4 +1,4 @@
-export function Avax() {
+export function Avax(): JSX.Element {
 	return (
 		<svg
 			width='32'

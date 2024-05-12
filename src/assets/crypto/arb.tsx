@@ -1,4 +1,4 @@
-export function Arb() {
+export function Arb(): JSX.Element {
 	return (
 		<svg
 			width='32'
