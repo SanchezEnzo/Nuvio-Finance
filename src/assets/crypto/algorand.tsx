@@ -1,4 +1,4 @@
-export function Algoland() {
+export function Algoland(): JSX.Element {
 	return (
 		<svg
 			viewBox='0 0 32 32'
