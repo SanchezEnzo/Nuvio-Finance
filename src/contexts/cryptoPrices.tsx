@@ -1,3 +1,4 @@
+import { useLoading } from '@/hooks/useLoading'
 import { createContext, useState } from 'react'
 
 interface Roi {
@@ -89,6 +90,7 @@ export function CryptoPricesProvider({
 	children: React.ReactNode
 }): JSX.Element {
 	const [cryptoPrices, setCryptoPrices] = useState<Coins>()
+	const { updateLoading } = useLoading()
 
 	interface JSONResponse {
 		data?: Coins
@@ -110,7 +112,9 @@ export function CryptoPricesProvider({
 		const response: JSONResponse = await fetchingCryptoPrices()
 
 		if (response.data !== null && response.data !== undefined) {
+			updateLoading(true)
 			setCryptoPrices(response.data)
+			updateLoading(false)
 		} else if (response.errors !== null && response.errors !== undefined) {
 			// Manejar el caso de errores, si es necesario
 			console.error('Error fetching crypto prices:', response.errors[0].message)

@@ -1,6 +1,11 @@
-import { useState } from "react"
+import { useState } from 'react'
 
-export useLoading(){
-  const [isLoading, setIsLoading] = useState()
-  return {isLoading}
+export function useLoading() {
+	const [isLoading, setIsLoading] = useState<boolean>(false)
+
+	const updateLoading = (bool: boolean) => {
+		setIsLoading(bool)
+	}
+
+	return { isLoading, updateLoading }
 }
