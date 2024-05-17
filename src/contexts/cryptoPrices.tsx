@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 export interface Coin {
 	id: string
@@ -30,17 +30,12 @@ export interface Coins {
 }
 
 export interface CryptoPricesContextType {
-	cryptoPrices: Coins
-	getCryptoPrices: () => Promise<void>
+	cryptoPrices: Coins | null
 	loadingCryptoPrices: boolean
 }
 
 const inicialCryptoPricesValue: CryptoPricesContextType = {
-	cryptoPrices: {
-		data: [],
-		info: { coins_num: '', time: 0 }
-	},
-	getCryptoPrices: async () => {},
+	cryptoPrices: null,
 	loadingCryptoPrices: false
 }
 
@@ -55,45 +50,36 @@ export function CryptoPricesProvider({
 }: {
 	children: React.ReactNode
 }): JSX.Element {
-	const [cryptoPrices, setCryptoPrices] = useState<Coins>()
+	const [cryptoPrices, setCryptoPrices] = useState<Coins | null>(null)
 	const [loadingCryptoPrices, setLoadingCryptoPrices] = useState(false)
 
-	interface JSONResponse {
-		data?: Coins
-		errors?: Array<{ message: string }>
-	}
-
-	const fetchingCryptoPrices = async (): Promise<JSONResponse> => {
+	const fetchingCryptoPrices = async (): Promise<Coins> => {
 		const response = await fetch(url)
+		if (!response.ok) {
+			throw new Error('Error fetching data')
+		}
 		const data: Coins = await response.json()
-		return { data }
+		return data
 	}
 
-	const getCryptoPrices = async (): Promise<void> => {
+	const fetchData = async () => {
 		try {
 			setLoadingCryptoPrices(true)
-			const response: JSONResponse = await fetchingCryptoPrices()
-			if (response.data !== null && response.data !== undefined) {
-				setCryptoPrices(response.data)
-			} else if (response.errors !== null && response.errors !== undefined) {
-				// Manejar el caso de errores, si es necesario
-				console.error(
-					'Error fetching crypto prices:',
-					response.errors[0].message
-				)
-			}
+			const data = await fetchingCryptoPrices()
+			setCryptoPrices(data)
 		} catch (error) {
 			console.error('Error fetching crypto prices:', error)
-			// return { errors: [{ message: 'Error fetching crypto prices' }] } // Manejo de errores
 		} finally {
 			setLoadingCryptoPrices(false)
 		}
 	}
 
+	useEffect(() => {
+		fetchData()
+	}, [])
+
 	return (
-		<CryptoPricesContext.Provider
-			value={{ cryptoPrices, getCryptoPrices, loadingCryptoPrices }}
-		>
+		<CryptoPricesContext.Provider value={{ cryptoPrices, loadingCryptoPrices }}>
 			{children}
 		</CryptoPricesContext.Provider>
 	)

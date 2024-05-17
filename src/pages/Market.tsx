@@ -7,7 +7,6 @@ import { Solana } from '@/assets/crypto/sol'
 import { Ton } from '@/assets/crypto/ton'
 import { Xrp } from '@/assets/crypto/xrp'
 import { useCryptoPrices } from '@/hooks/useCryptoPrices'
-import { useEffect } from 'react'
 import {
 	Table,
 	TableBody,
@@ -29,11 +28,7 @@ import { Algoland } from '@/assets/crypto/algorand'
 import { LoadingIcon } from '@/assets/LodingIcon'
 
 function TableCoins(): React.ReactNode {
-	const { cryptoPrices, getCryptoPrices } = useCryptoPrices()
-
-	useEffect(() => {
-		getCryptoPrices()
-	}, [])
+	const { cryptoPrices } = useCryptoPrices()
 
 	return (
 		<Table className='text-right '>
@@ -114,7 +109,13 @@ export function Market(): React.ReactNode {
 		<section className='flex items-start mt-28 w-full h-screen justify-center'>
 			<div className='w-[70%]'>
 				<h2 className='mb-4 font-semibold text-2xl'>Tokens</h2>
-				{loadingCryptoPrices ? <LoadingIcon /> : <TableCoins />}
+				{loadingCryptoPrices ? (
+					<div className='w-full flex justify-center mt-20'>
+						<LoadingIcon />
+					</div>
+				) : (
+					<TableCoins />
+				)}
 			</div>
 		</section>
 	)
