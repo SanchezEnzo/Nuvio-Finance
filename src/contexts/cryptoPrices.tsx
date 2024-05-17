@@ -1,40 +1,4 @@
-import { useLoading } from '@/hooks/useLoading'
 import { createContext, useState } from 'react'
-
-interface Roi {
-	times: number
-	currency: string
-	percentage: number
-}
-
-// export interface Coin {
-// 	id: string
-// 	symbol: string
-// 	name: string
-// 	image: string
-// 	current_price: number
-// 	market_cap: number
-// 	market_cap_rank: number
-// 	fully_diluted_valuation: number
-// 	total_volume: number
-// 	high_24h: number
-// 	low_24h: number
-// 	price_change_24h: number
-// 	price_change_percentage_24h: number
-// 	market_cap_change_24h: number
-// 	market_cap_change_percentage_24h: number
-// 	circulating_supply: number
-// 	total_supply: number
-// 	max_supply: number
-// 	ath: number
-// 	ath_change_percentage: number
-// 	ath_date: string
-// 	atl: number
-// 	atl_change_percentage: number
-// 	atl_date: number
-// 	roi: null | Roi
-// 	last_updated: string
-// }
 
 export interface Coin {
 	id: string
@@ -67,7 +31,8 @@ export interface Coins {
 
 export interface CryptoPricesContextType {
 	cryptoPrices: Coins
-	getCryptoPrices: () => void
+	getCryptoPrices: () => Promise<void>
+	loadingCryptoPrices: boolean
 }
 
 const inicialCryptoPricesValue: CryptoPricesContextType = {
@@ -75,7 +40,8 @@ const inicialCryptoPricesValue: CryptoPricesContextType = {
 		data: [],
 		info: { coins_num: '', time: 0 }
 	},
-	getCryptoPrices: () => {}
+	getCryptoPrices: async () => {},
+	loadingCryptoPrices: false
 }
 
 const url = 'https://api.coinlore.net/api/tickers/'
@@ -90,7 +56,7 @@ export function CryptoPricesProvider({
 	children: React.ReactNode
 }): JSX.Element {
 	const [cryptoPrices, setCryptoPrices] = useState<Coins>()
-	const { updateLoading } = useLoading()
+	const [loadingCryptoPrices, setLoadingCryptoPrices] = useState(false)
 
 	interface JSONResponse {
 		data?: Coins
@@ -98,31 +64,36 @@ export function CryptoPricesProvider({
 	}
 
 	const fetchingCryptoPrices = async (): Promise<JSONResponse> => {
-		try {
-			const response = await fetch(url)
-			const data: Coins = await response.json()
-			return { data }
-		} catch (error) {
-			console.error('Error fetching crypto prices:', error)
-			return { errors: [{ message: 'Error fetching crypto prices' }] } // Manejo de errores
-		}
+		const response = await fetch(url)
+		const data: Coins = await response.json()
+		return { data }
 	}
 
 	const getCryptoPrices = async (): Promise<void> => {
-		const response: JSONResponse = await fetchingCryptoPrices()
-
-		if (response.data !== null && response.data !== undefined) {
-			updateLoading(true)
-			setCryptoPrices(response.data)
-			updateLoading(false)
-		} else if (response.errors !== null && response.errors !== undefined) {
-			// Manejar el caso de errores, si es necesario
-			console.error('Error fetching crypto prices:', response.errors[0].message)
+		try {
+			setLoadingCryptoPrices(true)
+			const response: JSONResponse = await fetchingCryptoPrices()
+			if (response.data !== null && response.data !== undefined) {
+				setCryptoPrices(response.data)
+			} else if (response.errors !== null && response.errors !== undefined) {
+				// Manejar el caso de errores, si es necesario
+				console.error(
+					'Error fetching crypto prices:',
+					response.errors[0].message
+				)
+			}
+		} catch (error) {
+			console.error('Error fetching crypto prices:', error)
+			// return { errors: [{ message: 'Error fetching crypto prices' }] } // Manejo de errores
+		} finally {
+			setLoadingCryptoPrices(false)
 		}
 	}
 
 	return (
-		<CryptoPricesContext.Provider value={{ cryptoPrices, getCryptoPrices }}>
+		<CryptoPricesContext.Provider
+			value={{ cryptoPrices, getCryptoPrices, loadingCryptoPrices }}
+		>
 			{children}
 		</CryptoPricesContext.Provider>
 	)

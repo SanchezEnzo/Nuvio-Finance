@@ -26,7 +26,7 @@ import { Ftm } from '@/assets/crypto/ftm'
 import { Inj } from '@/assets/crypto/inj'
 import { Cro } from '@/assets/crypto/cro'
 import { Algoland } from '@/assets/crypto/algorand'
-import { useLoading } from '@/hooks/useLoading'
+import { LoadingIcon } from '@/assets/LodingIcon'
 
 function TableCoins(): React.ReactNode {
 	const { cryptoPrices, getCryptoPrices } = useCryptoPrices()
@@ -109,12 +109,12 @@ function TableCoins(): React.ReactNode {
 }
 
 export function Market(): React.ReactNode {
-	const { isLoading } = useLoading()
+	const { loadingCryptoPrices } = useCryptoPrices()
 	return (
 		<section className='flex items-start mt-28 w-full h-screen justify-center'>
 			<div className='w-[70%]'>
 				<h2 className='mb-4 font-semibold text-2xl'>Tokens</h2>
-				{!isLoading && <TableCoins />}
+				{loadingCryptoPrices ? <LoadingIcon /> : <TableCoins />}
 			</div>
 		</section>
 	)
