@@ -1,4 +1,4 @@
-export function Cro(): JSX.Element {
+export function Cro(): React.ReactNode {
 	return (
 		<svg
 			width='32'

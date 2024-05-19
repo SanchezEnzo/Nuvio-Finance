@@ -1,4 +1,4 @@
-export function Coinbase(): JSX.Element {
+export function Coinbase(): React.ReactNode {
 	return (
 		<svg
 			width='32'

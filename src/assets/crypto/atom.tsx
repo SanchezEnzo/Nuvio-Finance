@@ -1,4 +1,4 @@
-export function Atom(): JSX.Element {
+export function Atom(): React.ReactNode {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
