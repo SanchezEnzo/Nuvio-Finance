@@ -1,4 +1,4 @@
-export function Ftm(): JSX.Element {
+export function Ftm(): React.ReactNode {
 	return (
 		<svg
 			width='32'

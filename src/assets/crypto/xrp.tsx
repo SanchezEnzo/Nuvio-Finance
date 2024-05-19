@@ -1,4 +1,4 @@
-export function Xrp(): JSX.Element {
+export function Xrp(): React.ReactNode {
 	return (
 		<svg
 			width='32'
