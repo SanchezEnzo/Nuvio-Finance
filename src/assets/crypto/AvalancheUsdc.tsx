@@ -1,4 +1,4 @@
-export function AvalancheUsdc(): JSX.Element {
+export function AvalancheUsdc(): React.ReactNode {
 	return (
 		<svg
 			width='32'

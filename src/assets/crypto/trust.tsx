@@ -1,4 +1,4 @@
-export function TrustWallet(): JSX.Element {
+export function TrustWallet(): React.ReactNode {
 	return (
 		<svg
 			width='32'

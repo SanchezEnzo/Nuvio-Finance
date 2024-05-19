@@ -1,4 +1,4 @@
-export function Nbtc() {
+export function Nbtc() :React.ReactNode{
 	return (
 		<svg
 			width='32'

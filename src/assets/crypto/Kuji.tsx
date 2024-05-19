@@ -1,4 +1,4 @@
-export function Kuji(): JSX.Element {
+export function Kuji(): React.ReactNode {
 	return (
 		<svg
 			width='32'

@@ -1,4 +1,4 @@
-export function Metamask(): JSX.Element {
+export function Metamask(): React.ReactNode {
 	return (
 		<svg
 			fill='none'

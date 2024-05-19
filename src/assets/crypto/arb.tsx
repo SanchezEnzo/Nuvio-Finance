@@ -1,4 +1,4 @@
-export function Arb(): JSX.Element {
+export function Arb(): React.ReactNode {
 	return (
 		<svg
 			width='32'

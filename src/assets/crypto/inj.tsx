@@ -1,4 +1,4 @@
-export function Inj(): JSX.Element {
+export function Inj(): React.ReactNode {
 	return (
 		<svg
 			width='32'

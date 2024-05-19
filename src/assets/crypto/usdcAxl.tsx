@@ -1,4 +1,4 @@
-export function UsdcAxl(): JSX.Element {
+export function UsdcAxl(): React.ReactNode {
 	return (
 		<svg
 			width='32'

@@ -1,4 +1,4 @@
-export function Wsteth(): JSX.Element {
+export function Wsteth(): React.ReactNode {
 	return (
 		<svg
 			width='32'

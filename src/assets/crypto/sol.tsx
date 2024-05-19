@@ -1,4 +1,4 @@
-export function Solana(): JSX.Element {
+export function Solana(): React.ReactNode {
 	return (
 		<svg
 			viewBox='0 0 36 36'

@@ -1,4 +1,4 @@
-export function PolygonUsdc(): JSX.Element {
+export function PolygonUsdc(): React.ReactNode {
 	return (
 		<svg
 			width='32'

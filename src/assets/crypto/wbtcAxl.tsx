@@ -1,4 +1,4 @@
-export function WbtcAxl(): JSX.Element {
+export function WbtcAxl(): React.ReactNode {
 	return (
 		<svg
 			width='32'

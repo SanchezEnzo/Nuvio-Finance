@@ -1,4 +1,4 @@
-export function MoonbeamDot(): JSX.Element {
+export function MoonbeamDot(): React.ReactNode {
 	return (
 		<svg
 			width='500'
