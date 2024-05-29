@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { Navbar } from '../components/home/Navbar'
 import { ConectWallet } from '@/components/home/ConectWallet'
+import { Wallet } from './Wallet'
 
 export function Home(): React.ReactNode {
 	return (
@@ -14,6 +15,7 @@ export function Home(): React.ReactNode {
 			<section className='flex justify-center w-full'>
 				<Outlet />
 			</section>
+			<Wallet />
 		</div>
 	)
 }
