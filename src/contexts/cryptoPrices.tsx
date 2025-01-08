@@ -54,27 +54,34 @@ export function CryptoPricesProvider({
 	const [loadingCryptoPrices, setLoadingCryptoPrices] = useState(false)
 
 	const fetchingCryptoPrices = async (): Promise<Coins> => {
-		const response = await fetch(url)
-		if (!response.ok) {
-			throw new Error('Error fetching data')
-		}
-		const data: Coins = await response.json()
-		return data
-	}
-
-	const fetchData = async () => {
 		try {
-			setLoadingCryptoPrices(true)
-			const data = await fetchingCryptoPrices()
-			setCryptoPrices(data)
+			const response = await fetch(url)
+			if (!response.ok) {
+				throw new Error('Error fetching data')
+			}
+			const data: Coins = await response.json()
+			return data
 		} catch (error) {
 			console.error('Error fetching crypto prices:', error)
-		} finally {
-			setLoadingCryptoPrices(false)
+			throw error
 		}
 	}
 
 	useEffect(() => {
+		// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+		const fetchData = async () => {
+			try {
+				setLoadingCryptoPrices(true)
+				const data = await fetchingCryptoPrices()
+				setCryptoPrices(data)
+			} catch (error) {
+				console.error('Error fetching crypto prices:', error)
+			} finally {
+				setLoadingCryptoPrices(false)
+			}
+		}
+
+		// eslint-disable-next-line @typescript-eslint/no-floating-promises
 		fetchData()
 	}, [])
 
